@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 50%;
+
+  --bg-color: #000;
+
+  --fc-primary: #FFF;
+  --fc-secondary: #7C7C8A;
+
+  --hue: 193;
+  --primaryColor-light: hsla(var(--hue), 91%, 25%, 1);
+  --primaryColor-normal: hsla(var(--hue), 72%, 13%, 1);
+  --primaryColor-bold: hsla(var(--hue), 65%, 7%, 1);
+  --primaryColor-extraBold: hsla(var(--hue), 61%, 6%, 0.5);
+  --primaryColor-border: hsla(var(--hue), 31%, 42%, 1);
+
+  --secondaryColor: hsla(355, 91%, 66%, 1)
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 8rem;
+}
+
+body * {
+  font-family: 'Roboto', sans-serif;
+  color: var(--fc-primary);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8rem;
+}
+
+header img {
+  width: 18.6rem;
+}
+
+header .add {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .add input {
+  width: 36.2rem;
+  padding: 1.6rem;
+  background-color: var(--primaryColor-bold);
+  border: none;
+  border-radius: 5px;
+}
+
+header .add input::placeholder {
+  color: var(--fc-secondary);
+}
+
+header .add input:focus {
+  outline: none;
+  box-shadow: 0 0 2px var(--fc-primary);
+}
+
+header button {
+  background-color: var(--primaryColor-light);
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 4.8rem;
+  width: 17rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: var(--fc-primary);
+  color: var(--primaryColor-light);
+}
+
+.add button object {
+  width: 2.4rem;
+}
+
+header button:hover svg path {
+  fill: var(--primaryColor-light);
+}
+
+
+/* ---------- Table */
+table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid var(--primaryColor-border);
+  border-radius: 1.2rem;
+}
+
+tbody, thead, tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tbody {
+  display: block;
+  overflow: auto;
+  table-layout: fixed;
+  max-height: 48.1rem;
+  position: relative;
+}
+
+tbody::-webkit-scrollbar {
+  position: absolute;
+  width: 6px;
+  display: block;
+  float: left;
+}
+
+tbody::-webkit-scrollbar-track {
+  background: var(--primaryColor-border);
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor-light);
+  border-radius: 10px;
+  border: 1px solid var(--primaryColor-extraBold);
+}
+
+thead tr {
+  background-color: var(--primaryColor-normal);
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+tbody tr {
+  background-color: var(--primaryColor-extraBold);
+  scroll-snap-align: start;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--primaryColor-bold);
+}
+
+th, td {
+  padding: .8rem 2rem;
+  font-size: 1.3rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  text-align: start;
+}
+
+tbody tr:last-child {
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+
+tbody tr:nth-child(even) td {
+  border-top: 1px solid var(--primaryColor-border);
+  border-bottom: 1px solid var(--primaryColor-border);
+}
+
+tbody tr:nth-child(even):last-child td {
+  border-bottom: none;
+}
+
+.user {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  min-width: 28rem;
+}
+
+.user img {
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: #FFF;
+  border-radius: 50%;
+}
+
+.user div {
+  display: flex;
+  flex-direction: column;
+}
+
+.user div span {
+  font-weight: 700;
+}
+
+.user div a {
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.remove button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--secondaryColor);
+  cursor: pointer;
+}
+
+.nullFavorete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: 40rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
+  line-height: 2.478rem;
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (min-width: 900px) {
+  :root {
+    font-size: 62.5%;
+  }
+  body {
+    padding: 11.5rem 16rem 7rem;
+  }
+  header .add input {
+    width: 46.2rem;
+  }
+  th, td {
+    padding: 1.6rem 4rem;
+    font-size: 2rem;
+  }
+  .user img {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+  .remove button {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1150px) {
+  header {
+    flex-direction: row;
+  }
+  .nullFavorete {
+    font-size: 4rem;
+    gap: 6rem;
+  }
+}
