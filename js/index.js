@@ -1,3 +1,3 @@
-import { HandleFavoretes } from "./Favortes.js"
+import { HandleFavorites } from "./Favorites.js"
 
-new HandleFavoretes('#app')
+new HandleFavorites('#app')

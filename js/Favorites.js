@@ -2,7 +2,7 @@ import { GitHubSearch } from './GitHubSearch.js'
 
 import UsersLocalStore from './UsersLocalStore.js'
 
-export class Favoretes {
+export class Favorites {
   users = []
 
   constructor(root){
@@ -56,13 +56,13 @@ export class Favoretes {
   }
 }
 
-export class HandleFavoretes extends Favoretes {
+export class HandleFavorites extends Favorites {
   constructor(root) {
     super(root)
 
     this.handleView()
 
-    this.addEventSeachUser()
+    this.addEventSearchUser()
   }
   
   handleView() {
@@ -132,7 +132,7 @@ export class HandleFavoretes extends Favoretes {
     return tr
   }
 
-  addEventSeachUser() {
+  addEventSearchUser() {
     const inputSearch = document.querySelector('.add input')
 
     inputSearch.addEventListener('keypress', (e) => {
